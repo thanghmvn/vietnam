@@ -1,0 +1,22 @@
+# Country list
+- name: Malaysia
+  link: malaysia
+  code: my
+- name: Singapore
+  link: singapore
+  code: sg
+- name: Hong Kong
+  link: hong kong
+  code: hk
+- name: Indonesia
+  link: indonesia
+  code: id
+- name: Vietnam
+  link: vietnam
+  code: vn
+- name: Philippines
+  link: philippines
+  code: ph
+- name: Thailand
+  link: thailand
+  code: th

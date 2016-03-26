@@ -1,0 +1,84 @@
+/* -- General Layout -- */
+
+/* Main content */
+
+.fixed {
+  position: fixed;
+  @media (min-width: 940px) {
+    position: static;
+  }
+}
+
+#container {
+	margin:0 auto;
+	max-width: 730px;
+	padding: 0 1.5rem;
+}
+
+#header {
+	text-align: center;
+  padding: 24px 0;
+  position: relative;
+  a {
+  	text-decoration: none;
+  	color: $link-color;
+  	display: inline-block;
+  }
+  img {
+  	max-height: 72px;
+  	margin: 0 auto;
+  	display: block;
+  }
+  h1 {
+  	font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
+  &:after {
+  	display: block;
+    content: '';
+    width: 8rem;
+    height: 2px;
+    margin: 23px auto;
+    background-color: lighten($black-color, 60%);
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  @include prefix((border-radius: 4px));
+}
+
+code {
+  color: lighten($text-color, 35%);
+  background-color: lighten($background-color, 35%);
+}
+
+/* Set the vertical rhythm (and padding-left) for lists inside post content */
+
+.content ul, .content ol {
+  line-height: 1.5em; /* 24px/16px */
+  padding-left: 1.5em;
+  @media (min-width: 940px) {
+    line-height: 1.33334em; /* 24px/18px */
+  }
+}
+
+/* Footer */
+
+#footer {
+  background-color: $main-color;
+  color: $text-color;
+  text-align: center;
+  padding-top: 20px;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.35em;
+    background-color: $secondary-color;
+    margin-top: 20px;
+  }
+}

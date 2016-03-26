@@ -1,0 +1,151 @@
+/*
+  Credit to web-tiki
+  https://github.com/web-tiki/responsive-grid-of-hexagons
+*/
+
+#hex-bg {
+  background-color: #F3F3E1; //#8F8E8C
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#hexagon {
+  width:90%;
+  margin:0 auto;
+  overflow:hidden;
+  li {
+    float:left;
+    overflow:hidden;
+    visibility:hidden;
+    position:relative;
+    list-style-type:none;
+    width:27.85714285714286%; /* = (100-2.5) / 3.5 */
+    padding-bottom: 32.16760145166612%; /* =  width /0.866 */
+    @include prefix((transform: rotate(-60deg) skewY(30deg)));
+    * {
+      position:absolute;
+      visibility:visible;
+    }
+    &:nth-child(3n+2) {
+      margin:0 1%;
+    }
+    &:nth-child(6n+4) {
+      margin-left:0.5%;
+    }
+    &:nth-child(6n+4),
+    &:nth-child(6n+5),
+    &:nth-child(6n+6) {
+    	margin-top: -6.9285714285%;
+      margin-bottom: -6.9285714285%;
+      @include prefix((transform: translateX(50%) rotate(-60deg) skewY(30deg)));
+      &:last-child {
+        margin-bottom:0%;
+      }
+    }
+    div {
+      color: $text-color;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      text-align:center;
+      @include prefix((transform: skewY(-30deg) rotate(60deg)));
+      @include prefix((backface-visibility: hidden));
+    }
+  }
+}
+
+.clr:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* HEX CONTENT */
+
+#hexagon li img {
+  left:0px;
+  width: auto;
+  height:100%;
+  margin: auto;
+  max-width: none;
+}
+
+#hexagon div {
+  h1, p {
+    width:100%;
+    padding:0 5%;
+    background-color: rgba($background-color, .75);
+    -webkit-transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+       -moz-transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+        -ms-transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+            transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+  }
+}
+
+#hexagon li {
+  h1 {
+    bottom:110%;
+    color: $black-color;
+    font-style:italic;
+    font-weight:normal;
+    font-size:1.5em;
+    padding-top:100%;
+    padding-bottom:100%;
+    &:after{
+    	content:'';
+      display:block;
+      position:absolute;
+      bottom:-1px; left:43%;
+      width:15%;
+      text-align:left;
+      z-index:1;
+      border-bottom:2px solid $black-color;
+    }
+  }
+  p {
+    top:110%;
+  	padding-top:50%;
+  	padding-bottom:50%;
+  }
+}
+
+/* HOVER EFFECT */
+
+#hexagon li div:hover {
+  h1 {
+    bottom:50%;
+    padding-bottom:10%;
+  }
+  p {
+    top:50%;
+    padding-top:10%;
+  }
+}
+
+#register {
+  left: 27%;
+  color: $black-color;
+  border:1px solid $black-color;
+  padding:.5em .7em;
+  margin:1%;
+  transition: color .5s;
+  overflow:hidden;
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 130%; height: 100%;
+    background: $black-color;
+    z-index: -1;
+    @include prefix((transform-origin:0 0));
+    @include prefix((transform:translateX(-100%) skewX(-45deg)));
+    @include prefix((transition: transform .5s));
+  }
+  &:hover {
+    color: $text-color;
+    &:before {
+      @include prefix((transform: translateX(0) skewX(-45deg)));
+    }
+  }
+}

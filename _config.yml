@@ -1,0 +1,20 @@
+# Site settings
+title: CYBERSOCKS
+description: "Cybersocks Regional Competition 2016"
+url: "https://cybersocks.org"
+admin: "admin@cybersocks.org"
+quals: "malaysia"
+
+# Build settings
+baseurl: "/"
+markdown: kramdown
+source: .
+permalink: /:title
+
+# Custom variables
+version: "1.5"
+timezone: Asia/Kuala_Lumpur
+sass:
+  style: compressed
+kramdown:
+  input: GFM

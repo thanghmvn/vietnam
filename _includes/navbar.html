@@ -1,0 +1,38 @@
+<nav id="navbar" class="nav-down" role="navigation">
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ "/"  | prepend: site.url }}">{{ site.title }}</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="{{ site.url }}">HOME</a></li>
+          <li {% if page.title == "About" %}class="active"{% endif %}><a href="{{"/about/" | prepend: site.url }}">ABOUT</a></li>
+          <li {% if page.title == "Contact" %}class="active"{% endif %}><a href="{{"/contact/" | prepend: site.url }}">CONTACT</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RESOURCES</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Rules</a></li>
+              <li><a href="#">Programme</a></li>
+              <li><a href="#">Committee</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">QUALS</a>
+            <ul class="dropdown-menu">
+              {% for country in site.data.country %}
+              <li{% if page.title == country.name %} class="active"{% endif %}><a href="{{ "/" | prepend: site.url }}{{ country.link }}">{{ country.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
