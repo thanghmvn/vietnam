@@ -2,7 +2,7 @@ $(document).ready(function() {
 	console.log( "Welcome to the Cybersocks Regional Competition 2016!" );
 });
 
-// Hide #navbar on on scroll down
+// Hide/show navbar on scroll
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
@@ -40,3 +40,8 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
+
+// Initiates typeit
+$('#typing').typeIt({
+	cursor: false
+});
